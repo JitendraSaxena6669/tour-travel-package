@@ -1,13 +1,13 @@
 ﻿// Travel Website Main JavaScript
 
-// View More functionality (for Routes)
+// View More functionality
 function toggleViewMore(sectionId) {
     const content = document.getElementById(sectionId);
     const button = document.querySelector([onclick="toggleViewMore('$ + "sectionId')]");
 
     if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'flex'; // Use flex for row
-        button.textContent = 'View Less Destinations';
+        content.style.display = 'block';
+        button.textContent = 'View Less';
         button.classList.remove('btn-outline-primary');
         button.classList.add('btn-primary-custom');
     } else {
@@ -20,8 +20,8 @@ function toggleViewMore(sectionId) {
 
 // WhatsApp integration
 function bookOnWhatsApp(route, price) {
-    const message = Hi! I want to book a cab for  at ₹. Please provide more details.;
-    const whatsappUrl = https://wa.me/=;
+    const message = Hi! I want to book a cab for $ + "{route} at ₹$" + "{price}. Please provide more details.";
+    const whatsappUrl = https://wa.me/=$ + "{encodeURIComponent(message)}";
     window.open(whatsappUrl, '_blank');
 }
 
@@ -35,25 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
-
-    // Gallery Modal Image Source Update
-    const galleryModal = document.getElementById('galleryModal');
-    if (galleryModal) {
-        galleryModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const imageSrc = button.getAttribute('data-bs-image-src');
-            const imageAlt = button.getAttribute('data-bs-image-alt');
-            
-            const modalImage = galleryModal.querySelector('.modal-body img');
-            const modalCaption = galleryModal.querySelector('.modal-body .caption');
-            
-            modalImage.src = imageSrc;
-            modalImage.alt = imageAlt;
-            modalCaption.textContent = imageAlt;
-        });
-    }
 });

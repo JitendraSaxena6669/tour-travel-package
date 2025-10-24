@@ -1,10 +1,10 @@
 ﻿/* Travel Website Main Styles */
 :root {
-    --primary-color: #0056B3;
-    --secondary-color: #00C2E8;
-    --accent-color: #FF5722;
-    --light-bg: #f4f7f6; /* Lighter background */
-    --dark-text: #2c3e50; /* Primary Text */
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-bg: #f8f9fa;
+    --dark-text: #333;
 }
 
 * {
@@ -14,116 +14,91 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Modern Font Suggestion */
-    line-height: 1.7;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     color: var(--dark-text);
-    background-color: var(--light-bg);
 }
 
 .navbar {
     background: var(--primary-color) !important;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .navbar-brand {
-    font-weight: 700;
-    font-size: 1.6rem;
-    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .hero-section {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 120px 0 100px; /* Increased padding */
+    padding: 100px 0;
     text-align: center;
-    min-height: 80vh; /* Full screen on load */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    font-weight: 800;
+    font-weight: bold;
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.95;
-    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
 .btn-primary-custom {
     background: var(--accent-color);
     border: none;
-    padding: 14px 35px;
+    padding: 12px 30px;
     font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px; /* Pill button */
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 25px;
+    transition: all 0.3s;
 }
 
 .btn-primary-custom:hover {
-    background: darken(var(--accent-color), 10%); /* Darken slightly on hover */
-    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.4);
-    transform: translateY(-3px);
+    background: #c0392b;
+    transform: translateY(-2px);
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     color: var(--primary-color);
-    font-weight: 700;
-    font-size: 2.5rem;
-    position: relative;
-}
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--accent-color);
-    margin: 10px auto 0;
-    border-radius: 2px;
+    font-weight: bold;
 }
 
 .route-card, .package-card {
     border: none;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .route-card:hover, .package-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 .price-badge {
     background: var(--accent-color);
     color: white;
-    padding: 6px 18px;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 1rem;
-    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 .whatsapp-btn {
     background: #25D366;
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 50px;
+    padding: 8px 20px;
+    border-radius: 20px;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
     transition: all 0.3s;
-    font-weight: 600;
 }
 
 .whatsapp-btn:hover {
@@ -134,71 +109,16 @@ body {
 
 .footer {
     background: var(--primary-color);
-    color: #eaf1f8;
-    padding: 60px 0 20px;
+    color: white;
+    padding: 50px 0 20px;
     margin-top: 80px;
-    font-size: 0.9rem;
-}
-.footer a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.footer a:hover {
-    color: white;
 }
 
-/* Gallery & Destinations Styling */
-.gallery-item {
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-    position: relative;
-}
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-.gallery-item img {
-    width: 100%;
-    height: 300px; /* Fixed height for uniformity */
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.3s;
-}
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 86, 179, 0.6); /* Primary color overlay */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
+.view-more-section {
+    text-align: center;
+    margin: 40px 0;
 }
 
-.destination-card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-.destination-card img {
-    height: 250px;
-    object-fit: cover;
-}
-.destination-card .card-body {
-    padding: 25px;
-}
-.destination-card .card-title {
-    color: var(--primary-color);
-    font-weight: 700;
+.collapse-content {
+    margin-top: 30px;
 }
